@@ -9,6 +9,10 @@ const Sum = () =>{
     const [FirstNumber, setFirstNumber] = useState();
     const [SecondNumber, setSecondNumber] = useState();
     
+    const clearFields = () =>{
+        setFirstNumber('');
+        setSecondNumber('')
+    }
 
     const performOperation = (e) =>{
         //Setting operation tye
@@ -21,32 +25,30 @@ const Sum = () =>{
             case 'addition':
                 const add = parseInt(FirstNumber) + parseInt(SecondNumber);
                 setResult(add)
-                setShowResult(true)
-                return 
+                break 
             
             //For Substraction
             case 'substraction':
                 const sub = parseInt(FirstNumber) - parseInt(SecondNumber);
                 setResult(sub)
-                setShowResult(true)
-                return
+                break
             
             //For Multiplication
             case 'multiplication':
                 const mul = parseInt(FirstNumber) * parseInt(SecondNumber);
                 setResult(mul)
-                setShowResult(true)
-                return 
+                break
             
             //For Division
             case 'division':
                 const div = parseInt(FirstNumber) / parseInt(SecondNumber);
                 setResult(div)
-                setShowResult(true)
-                return
+                break
             default :
-                return 
+                break
         }
+        setShowResult(true);
+        clearFields()
     }
     return (
     <>
@@ -67,6 +69,7 @@ const Sum = () =>{
                             placeholder="First Number" 
                             aria-label="First Number" 
                             aria-describedby="basic-addon1"
+                            value={FirstNumber}
                             onChange={(e)=>setFirstNumber(e.target.value)}
                         />
                     </div>
@@ -85,6 +88,7 @@ const Sum = () =>{
                             placeholder="Second Number" 
                             aria-label="Second Number" 
                             aria-describedby="basic-addon1"
+                            value={SecondNumber}
                             onChange={(e)=>setSecondNumber(e.target.value)}
                         />
                     </div>
