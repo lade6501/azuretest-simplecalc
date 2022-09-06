@@ -141,7 +141,7 @@ const Sum = () =>{
                 </div>
             </div>
             <div className={showResult ? 'show' : "hide"}>
-                <h4>{`The ${operation} is ${result}`}</h4>
+                <h4 id='result'>{`The ${operation} is ${result}`}</h4>
             </div>
         </div>
     </>
