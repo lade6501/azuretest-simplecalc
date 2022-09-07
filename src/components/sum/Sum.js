@@ -42,7 +42,7 @@ const Sum = () =>{
             //For Division
             case 'division':
                 const div = parseInt(FirstNumber) / parseInt(SecondNumber);
-                setResult(div.toFixed(2))
+                setResult(div.toFixed(2)) 
                 break
             default :
                 break
